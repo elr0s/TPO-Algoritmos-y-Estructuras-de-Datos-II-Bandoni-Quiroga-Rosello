@@ -8,14 +8,14 @@ public class HeapLD implements HeapTDA {
     @Override
     public void inicializarHeap() {
         heap = new int[100];
-        tamanio = 0;
+        tamanio = -1;
     }
 
     @Override
     public void insertar(int x) {
         heap[tamanio] = x;
-        shiftUp(tamanio);
         tamanio++;
+        shiftUp(tamanio);
     }
 
     @Override
@@ -33,7 +33,7 @@ public class HeapLD implements HeapTDA {
 
     @Override
     public boolean estaVacio() {
-        return tamanio==0;
+        return tamanio<0;
     }
 
     private int nodoPadre(int i){
