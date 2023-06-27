@@ -49,7 +49,7 @@ public class MinHeapLD implements MinHeapTDA {
     private void shiftUp(int i) {
         int padre = nodoPadre(i);
 
-        while (i > 0 && heap[padre] > heap[i]){
+        while (i < 0 && heap[padre] < heap[i]){
             cambiarPosicion(padre, i);
             i = padre;
         }
